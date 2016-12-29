@@ -1,7 +1,7 @@
 # =============================================================================
 # University of St.Gallen
 # Course: HS16-7,610,1.00 Software Engineering for Economists
-# Authors: Helena Aebersold, Divna Nikolic, Michèle Schoch
+# Authors: Helena Aebersold, Divna Nikolic, MichÃ¨le Schoch
 # Professor: Dr. Philipp Zahn
 # Date: 28.12.2016
 # =============================================================================
@@ -20,16 +20,16 @@
 rm(list=ls())
 
 # Set working directory
-## Erklärung:
+## ErklÃ¤rung:
 ## Sys.info()[['login']] unten in die Konsole eingeben und den Output dieses Befehls
 ## in das unten vorbereitete Feld (zb: 'Feld_Divna') eingeben. (Vergesst die ' ' nicht, vgl. 'Helena Aebersold')
 ## Danach gebt ihr eure Ordnerstruktur / working directory in das vorbereitete Feld ein.
-## Wenn das gemacht ist, können wir allen in diesem File arbeiten, ohne dass wir jedes mal 
-## die Ordnerstruktur anpassen müssen.
+## Wenn das gemacht ist, kÃ¶nnen wir allen in diesem File arbeiten, ohne dass wir jedes mal 
+## die Ordnerstruktur anpassen mÃ¼ssen.
 if (Sys.info()[['login']] == 'Helena Aebersold') {
   dir <- 'C:/Users/Helena Aebersold/Dropbox/HSG/Master/HS16/software_engineering_for_economists/SoftwareEngineering/'
-} else if (Sys.info()[['login']] == 'Feld_Divna') {
-  dir <- ""
+} else if (Sys.info()[['login']] == 'Divna') {
+  dir <- "C:/Users/Divna/Desktop/SoftwareEngineering-master/"
 } else if (Sys.info()[['login']] == 'Feld_Michele') {
   dir <- ""
 } else if (Sys.info()[['login']] == 'Feld_PhilippZahn') {
@@ -96,6 +96,15 @@ no_log <- c("Date", "i10Y", "i3M", "RER")
 
 # define lambda for HP-filter
 lambda <- 1600 # usually lambda = 1600 for quarterly data
+
+
+
+#--------------------
+# Correlations variables
+#--------------------
+
+# define number of lags and leads for correlogram
+lags <- 8
 
 
 
