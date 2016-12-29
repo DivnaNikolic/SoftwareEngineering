@@ -1,7 +1,7 @@
 # =============================================================================
 # University of St.Gallen
 # Course: HS16-7,610,1.00 Software Engineering for Economists
-# Authors: Helena Aebersold, Divna Nikolic, Michèle Schoch
+# Authors: Helena Aebersold, Divna Nikolic, MichÃ¨le Schoch
 # Professor: Dr. Philipp Zahn
 # Date: 28.12.2016
 # =============================================================================
@@ -67,3 +67,22 @@ white.theme.date.plot <- function(data, title){
 }
 
 
+
+
+# -----------------------------------------------------------------------------
+# 4. correlogramm
+# -----------------------------------------------------------------------------
+
+# function computing dynamic correlogram and putting it together into a data frame
+ccf.data.frame <- function(x, y, lags) {
+  # makes a data frame out of cff (cross-correlation function) for ggplot
+  #
+  # Args:
+  #   x, y: time series data
+  #   lags: number of lags and leads (specified in red_button)
+  #
+  # Returns:
+  #   a data frame containing the lags and cross-correlations
+  ccf.data <- ccf(x, y, lag.max = lags, type = "correlation", plot = F)
+  ccf.df <- data.frame(lag = ccf.data$lag,
+                       correlation = ccf.data$acf)
